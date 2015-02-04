@@ -1,0 +1,45 @@
+#include "xcolors/colorfulcolors"
+
+! General
+urxvt256c*termName:  rxvt-256color
+urxvt256c*loginShell:         true
+urxvt256c*scrollBar:         false
+urxvt256c*secondaryScroll:    true
+urxvt256c*saveLines:         65535
+urxvt256c*cursorBlink:       false
+urxvt256c*urgentOnBell:       true
+!urxvt*override-redirect:false
+!urxvt*borderLess:       false
+!urxvt*internalBorder:       0
+!urxvt*externalBorder:       0
+
+! Extensions
+urxvt256c*perl-lib:        /usr/lib/urxvt/perl/
+urxvt256c*perl-ext-common: default,matcher,searchable-scrollback
+urxvt256c*urlLauncher:     /usr/bin/google-chrome
+urxvt256c*matcher.button:  1
+
+! Appearance
+!  - use xft for drawing fonts
+!urxvt256c.font:       xft:Sauce Code Pro for Powerline:size=10:style=regular
+!urxvt256c.font:       xft:DejaVu Sans Mono for Powerline:size=10:style=regular
+! urxvt256c.font: xft:Inconsolata for Powerline:size=11
+urxvt256c.font:           xft:Inconsolata\ for\ Powerline:size=11:antialias=true
+urxvt256c.imFont:         xft:Inconsolata\ for\ Powerline:size=11:antialias=true
+urxvt256c.boldFont:       xft:Inconsolata\ for\ Powerline:size=11:antialias=true
+urxvt256c.italicFont:     xft:Inconsolata\ for\ Powerline:size=11:antialias=true
+urxvt256c.boldItalicFont: xft:Inconsolata\ for\ Powerline:size=11:antialias=true
+
+Xft.dpi:       96
+Xft.rgba:      rgb
+Xft.antialias: true
+Xft.hinting:   true
+Xft.hintstyle: hintfull
+
+!  - cursor
+! urxvt*cursorColor: #DCDCCC
+
+!  - color scheme
+urxvt256c.background:  #000000
+urxvt256c.foreground:  #EBEBFF
+
