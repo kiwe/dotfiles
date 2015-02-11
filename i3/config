@@ -6,6 +6,7 @@
 #
 
 exec_always xrandr --auto --output VGA-0 --left-of HDMI-0
+exec_always dropbox start
 
 # i3 config file (v4)
 #
@@ -31,7 +32,8 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $win
 
 # start a terminal
-bindsym $win+Return exec urxvt256c
+# bindsym $win+Return exec urxvt256c
+bindsym $win+Return exec gnome-terminal
 
 # kill focused window
 bindsym $win+Shift+q kill
