@@ -47,8 +47,8 @@ bindsym $win+minus scratchpad show
 # change focus
 bindsym $alt+q focus left
 bindsym $alt+w focus right
-# bindsym $win+l focus up
-# bindsym $win+odiaeresis focus right
+bindsym $alt+a focus up
+bindsym $alt+s focus down
 
 # alternatively, you can use the cursor keys:
 bindsym $win+Left focus left
@@ -119,16 +119,18 @@ bindsym $win+Shift+9 move container to workspace 9
 bindsym $win+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $win+Shift+c reload
+bindsym Control+$win+$alt+r reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $win+Shift+r restart
+bindsym Shift+Control+$win+$alt+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $win+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $win+Shift+g exec google-chrome
-bindsym $win+Shift+v exec gvim
+bindsym Shift+$win+g exec google-chrome
+bindsym Shift+$win+v exec gvim
+bindsym Shift+$win+h exec nautilus -w
+bindsym Shift+$win+c exec gnome-calculator
 
 # Media-shit!
 bindsym Control+$win+$alt+Up    exec pactl set-sink-volume 1 -- +3%
