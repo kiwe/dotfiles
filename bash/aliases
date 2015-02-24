@@ -1,0 +1,18 @@
+# Git aliases
+alias g='git'
+alias gc='git commit'
+alias gco='git checkout'
+alias gs='git status'
+alias gss='git status -s'
+alias gd='git diff'
+alias gdt='git difftool'
+alias gds='git --no-pager diff --stat'
+alias gdd='git --no-pager diff --dirstat'
+alias ga='git add'
+alias gb='git branch'
+alias gps='git push'
+alias gpl='git pull'
+alias gr='git rebase'
+alias gf='git fetch'
+alias gm='git merge'
+
