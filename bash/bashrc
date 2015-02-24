@@ -2,7 +2,7 @@
 [[ -f /etc/bashrc ]] && source /etc/bashrc
 
 # Source from dotfiles
-source ~/.dotfiles/bash/aliases.sh
+source ~/.dotfiles/bash/aliases
 
 # Source local aliases
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
