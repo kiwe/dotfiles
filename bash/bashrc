@@ -1,8 +1,9 @@
-# .bashrc
-
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-    source /etc/bashrc
-fi
+[[ -f /etc/bashrc ]] && source /etc/bashrc
 
+# Source from dotfiles
 source ~/.dotfiles/bash/aliases.sh
+
+# Source local aliases
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
+
