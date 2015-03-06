@@ -1,0 +1,274 @@
+extends html, css, javascript, generalcode
+
+snippet newpage "PHP base template" !b
+<?php
+
+include_once '../${1:../}lib/kops-lib.php';${2}
+
+class ${3:ClassName} {
+    ${4:// Properties}
+
+    /**
+     * Constructor
+     * ${5}
+     * return void
+     */
+    public function __construct(${6}) {
+        ${7}
+    }${8}
+}${9}
+
+// End of File
+endsnippet
+
+snippet def "def"
+define('${1}'${2});${3}
+endsnippet
+
+snippet doch "documentation file header"
+/**
+ * ${1}
+ *
+ * Created:         `date +"%Y.%m.%d"`
+ *
+ * Dependencies:
+ *
+ * @author      ${2}
+ * @version     v1.0-`date +"%Y.%m.%d"`
+ */
+endsnippet
+
+snippet classc "class with comment" !b
+/**
+ * ${1}
+ */
+class ${2:ClassName} {
+    ${3}
+}
+endsnippet
+
+snippet memberc "member with comment" !b
+/**
+ * @var ${1}
+ */
+${2:private} $${3:member};
+endsnippet
+
+snippet funcc "function with comment" !b
+/**
+ * ${1}
+ *
+ * @return  ${2:void}
+ */
+${3:public }function ${4:__construct}(${5}) {
+    ${6}
+}
+endsnippet
+
+snippet foreach "foreach" !b
+foreach (${1:$${2}} as ${3:$${4:k} => }$${5}) {
+	${6}
+}$0
+endsnippet
+
+snippet inc "inc"
+include_once ${1:PHI_${2} .}'${3:file}';${4}
+endsnippet
+
+###########################################################################
+#                                VARIABLES                                #
+###########################################################################
+
+snippet request "request" w
+$_REQUEST['${1}']${0}
+endsnippet
+
+snippet get "get" w
+$_GET['${1}']${0}
+endsnippet
+
+snippet post "post" w
+$_POST['${1}']${0}
+endsnippet
+
+snippet session "session" w
+$_SESSION['${1}']${0}
+endsnippet
+
+snippet server "server" w
+$_SERVER['${1}']${0}
+endsnippet
+
+###########################################################################
+#                                 THINGS                                  #
+###########################################################################
+
+snippet pres "<pre> single line"
+print '<pre>'. ${1} .'</pre>';
+endsnippet
+
+snippet prem "pre multi line"
+print '<pre>';
+${1}
+print '</pre>';
+endsnippet
+
+snippet printr "print r"
+print_r(${1}${2:, true});
+endsnippet
+
+snippet die
+die(${1});
+endsnippet
+
+snippet diep
+die('<pre>'. print_r($${1:array}, true) .'</pre>');
+endsnippet
+
+snippet ud "$USER_DATA variable" w
+$USER_DATA['${1}']
+endsnippet
+
+snippet phienv "PHI_ENVIRONMENT" w
+PHI_ENVIRONMENT
+endsnippet
+
+snippet pst "PHP Short Tag" w
+<?= ${1}; ?>$0
+endsnippet
+
+snippet pslt "PHP Single Line Tag" w
+<?php ${1} ?>$0
+endsnippet
+
+snippet pmlt "PHP Multi Line Tag"
+<?php
+${1}
+?>$0
+endsnippet
+
+snippet pif "PHP if"
+<?php if (${1:/* condition */}) { ?>
+endsnippet
+
+snippet pelse "PHP else"
+<?php } else${1: if (${2})} { ?>
+endsnippet
+
+snippet pend "PHP end"
+<?php } ?>
+endsnippet
+
+snippet this "$this-> expansion" !w
+$this->$0
+endsnippet
+
+snippet thisa "$this->array[''] expansion" !w
+$this->${1}[${2:'${3}'}]$0
+endsnippet
+
+snippet sv "Put a variable in a string" !w
+{$${1}}
+endsnippet
+
+################################################################################
+#                                ARRAY SNIPPETS                                #
+################################################################################
+
+snippet arrin "array with index" w
+$${1}[${2:'${3}'}]
+endsnippet
+
+snippet narray "array"
+$${1:arrayName} = array(${2:'${3}' => ${4}});${5}
+endsnippet
+
+snippet narraym "array multiline"
+$${1:arrayName} = array(
+    ${2:'${3}' => ${4}}
+);${5}
+endsnippet
+
+snippet sa "Put a array variable in a string" !w
+{$${1}[${2:'${3}'}]}
+endsnippet
+
+snippet aarr "Anonymous array" !w
+array(${1})$0
+endsnippet
+
+snippet aarrm "Anonymous array multiline" !w
+array(
+    ${1}
+)$0
+endsnippet
+
+snippet akv "array key value item" !w
+'${1}' => ${2},$0
+endsnippet
+
+###########################################################################
+#                   LIBRARY / SYSTEM SPECIFIC SNIPPETS                    #
+###########################################################################
+
+snippet acl "PHI_ACL::isAllowed" !i
+PHI_ACL::isAllowed('${1}', '${2}')$0
+endsnippet
+
+snippet pans "$ans including php tags" !w
+<?= $ans['ans${1}']; ?>$0
+endsnippet
+
+snippet pkf "_kf including php tags" w
+<?= _kf('${VISUAL}${1}'); ?>$0
+endsnippet
+
+snippet kf "_kf excluding php tags" w
+_kf('${VISUAL}${1}');$0
+endsnippet
+
+snippet tmp "Tempsnippet"
+$db_data['${1}']$0
+endsnippet
+
+snippet qstr "ADODB qstr()" !w
+$this->dbh->qstr(${1:${VISUAL}})$0
+endsnippet
+
+################################################################################
+#                        CODEIGNITER SPECIFIC SNIPPETS                         #
+################################################################################
+
+snippet transs "transaction start" !b
+$this->db->trans_start();$0
+endsnippet
+
+snippet transc "transaction complete" !b
+$this->db->trans_complete();$0
+endsnippet
+
+snippet transstat "transaction status" !w
+$this->db->trans_status()$0
+endsnippet
+
+snippet dbins "DB insert" !w
+$this->db->insert(${1:$this->tables[${2:'${3}'}]}, ${4});$0
+endsnippet
+
+snippet dbinsid "DB last insert id" !w
+$this->db->insert_id();$0
+endsnippet
+
+snippet lm "log_message()" !w
+log_message('INFO', ${1});
+endsnippet
+
+###########################################################################
+#                              PHP FUNCTIONS                              #
+###########################################################################
+
+snippet inar "in_array" !w
+in_array($${1:needle}, $${2:haystack})
+endsnippet
+
+# :vim:ft=snippets:

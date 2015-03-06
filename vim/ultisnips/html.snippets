@@ -1,0 +1,425 @@
+###########################################################################
+#                            TextMate Snippets                            #
+###########################################################################
+
+############
+# Doctypes #
+############
+
+snippet html5 "HTML5 DocType" !b
+<!DOCTYPE html>
+endsnippet
+
+snippet doctype "DocType XHTML 1.0 Strict" b
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+endsnippet
+
+snippet doctype "DocType XHTML 1.0 Transitional" b
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+endsnippet
+
+snippet doctype "DocType XHTML 1.1" b
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+endsnippet
+
+snippet doctype "HTML - 4.0 Transitional (doctype)" b
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+
+endsnippet
+
+
+#############
+# Shortcuts #
+#############
+snippet down "Down (down)"
+&#x2193;
+endsnippet
+
+snippet enter "Enter (enter)"
+&#x2305;
+endsnippet
+
+snippet escape "Escape (escape)"
+&#x238B;
+endsnippet
+
+snippet shift "Shift (shift)"
+&#x21E7;
+endsnippet
+
+snippet tab "Tab (tab)"
+&#x21E5;
+endsnippet
+
+snippet up "Up (up)"
+&#x2191;
+endsnippet
+
+# snippet return "Return (return)"
+# &#x21A9;
+# endsnippet
+
+snippet right "Right (right)"
+&#x2192;
+endsnippet
+
+snippet left "Left (left)"
+&#x2190;
+endsnippet
+
+#######################
+# Conditional inserts #
+#######################
+
+snippet ! "IE Conditional Comment: Internet Explorer 6 only"
+<!--[if IE 6]>${1:IE Conditional Comment: Internet Explorer 6 only   }<![endif]-->$0
+endsnippet
+
+snippet ! "IE Conditional Comment: Internet Explorer 7+"
+<!--[if gte IE 7]>${1:IE Conditional Comment: Internet Explorer 7 and above }<![endif]-->$0
+endsnippet
+
+snippet ! "IE Conditional Comment: Internet Explorer"
+<!--[if IE]>${1:       IE Conditional Comment: Internet Explorer          }<![endif]-->$0
+endsnippet
+
+snippet ! "IE Conditional Comment: NOT Internet Explorer"
+<!--[if !IE]><!-->${1:  IE Conditional Comment: NOT Internet Explorer      }<!-- <![endif]-->$0
+endsnippet
+
+#########################
+#  HTML TAG PARAMETERS  #
+#########################
+
+snippet pi "id parameter"
+id="${1}"$0
+endsnippet
+
+snippet pn "name parameter"
+name="${1}"$0
+endsnippet
+
+snippet pc "class parameter"
+class="${1}"$0
+endsnippet
+
+snippet pt "type parameter"
+type="${1}"$0
+endsnippet
+
+snippet ps "style parameter"
+style="${1}"$0
+endsnippet
+
+snippet pv "value parameter"
+value="${1}"$0
+endsnippet
+
+snippet ph "href parameter"
+href="${1}"$0
+endsnippet
+
+#############
+# HTML TAGS #
+#############
+
+snippet html "HTML tag" !b
+<html>
+    $0
+</html>
+endsnippet
+
+snippet input "input tag" !w
+<input type="${1}" id="${2}" name="${3}" value="${4}">$0
+endsnippet
+
+snippet opt "Option"
+<option${1: value="${2}"}>${3}</option>
+endsnippet
+
+snippet select "Select Box"
+<select id="${1}" name="${2}">
+	$0
+</select>
+endsnippet
+
+snippet textarea "  <textarea>"
+<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">$0</textarea>
+endsnippet
+
+snippet mailto "<a mailto: >"
+<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
+endsnippet
+
+snippet base "<base>"
+<base href="$1"${2: target="$3"}>
+endsnippet
+
+snippet body "<body>"
+<body${1}>
+	$0
+</body>
+endsnippet
+
+snippet label "<label> single line" !w
+<label for="${1}"${2}>${VISUAL}${3}</label>$0
+endsnippet
+
+snippet u "<u> single line" !w
+<u>${2:${VISUAL}}</u>$0
+endsnippet
+
+snippet i "<i> single line" w
+<i>${2:${VISUAL}}</i>$0
+endsnippet
+
+snippet div "<div> single line" !w
+<div${1}>${VISUAL}${2}</div>$0
+endsnippet
+
+snippet divm "<div> multi line"
+<div${1}>
+	${VISUAL}${2}
+</div>$0
+endsnippet
+
+snippet form "<form>"
+<form action="${1:`!p
+snip.rv = (snip.basename or 'unnamed') + '_submit'
+`}" method="${2:get}" accept-charset="utf-8">
+	$0
+
+	<p><input type="submit" value="Continue →"></p>
+</form>
+endsnippet
+
+snippet h1 "<h1>"
+<h1${1}>${VISUAL}${2}</h1>$0
+endsnippet
+
+snippet h2 "<h2>"
+<h2${1}>${VISUAL}${2}</h2>$0
+endsnippet
+
+snippet h3 "<h3>"
+<h3${1}>${VISUAL}${2}</h3>$0
+endsnippet
+
+snippet h4 "<h4>"
+<h4${1}>${VISUAL}${2}</h4>$0
+endsnippet
+
+snippet h5 "<h5>"
+<h5${1}>${VISUAL}${2}</h5>$0
+endsnippet
+
+snippet h6 "<h6>"
+<h6${1}>${VISUAL}${2}</h6>$0
+endsnippet
+
+snippet strong "<strong>" !w
+<strong${1}>${VISUAL}${2}</strong>$0
+endsnippet
+
+snippet small "<small>" !w
+<small${1}>${VISUAL}${2}</small>$0
+endsnippet
+
+snippet em "<em>" !w
+<em${1}>${VISUAL}${2}</em>$0
+endsnippet
+
+snippet head "<head>"
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>${1}</title>${2}
+</head>$0
+endsnippet
+
+snippet link "<link>"
+<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" title="${4:no title}" charset="${5:utf-8}">
+endsnippet
+
+snippet meta "<meta>"
+<meta name="${1:name}" content="${2:content}">
+endsnippet
+
+snippet scriptsrc "<script src...>"
+<script src="$1" type="text/javascript" charset="${3:utf-8}"></script>
+endsnippet
+
+snippet script "<script>"
+<script type="text/javascript" charset="utf-8">
+	$0
+</script>
+endsnippet
+
+snippet style "<style>"
+<style type="text/css" media="screen">
+	$0
+</style>
+endsnippet
+
+snippet button "Button element" w
+<button${1}>${2}</button>${3}
+endsnippet
+
+###########################################################################
+#                                  TABLE                                  #
+###########################################################################
+
+snippet table "<table>" !w
+<table${1}>
+    <thead>
+        <tr>
+            <th${2}>${3}</th>${4}
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td${5}>${6}</td>${7}
+        </tr>
+    </tbody>
+</table>${8}
+endsnippet
+
+snippet thead "table head tag" !w
+<thead>
+    ${1}
+</thead>$0
+endsnippet
+
+snippet tbody "table head tag" !w
+<tbody>
+    ${1}
+</tbody>$0
+endsnippet
+
+snippet tr "table row single line" !w
+<tr${1}>${2:${VISUAL}}</tr>${3}
+endsnippet
+
+snippet trm "table row multiline" !w
+<tr${1}>
+    ${2:${VISUAL}}
+</tr>${3}
+endsnippet
+
+snippet td "table cell single line" !w
+<td${1}>${2}</td>${3}
+endsnippet
+
+snippet tdm "table cell multiline" !w
+<td${1}>
+    ${2}
+</td>${3}
+endsnippet
+
+snippet th "table head single line"
+<th${1}>${2}</th>${3}
+endsnippet
+
+snippet thm "table head multiline"
+<th${1}>
+    ${2}
+</th>${3}
+endsnippet
+
+############################################################################
+
+snippet anchor "Link" i
+<a href="${1:#}"${2}>${VISUAL}${3}</a>${4}
+endsnippet
+
+snippet span "span"
+<span${1}>${VISUAL}${2}</span>${3}
+endsnippet
+
+snippet p "paragraph"
+<p${1}>${VISUAL}${2}</p>${3}
+endsnippet
+
+snippet pm "paragraph multiline"
+<p${1}>
+    ${VISUAL}${2}
+</p>${3}
+endsnippet
+
+snippet li "list item"
+<li${1}>${VISUAL}${2}</li>${3}
+endsnippet
+
+snippet lim "list item multiline"
+<li${1}>
+    ${VISUAL}${2}
+</li>${3}
+endsnippet
+
+snippet ul "unordered list"
+<ul${1}>
+    ${VISUAL}${2}
+</ul>${3}
+endsnippet
+
+snippet fieldset "Fieldset"
+<fieldset id="${1/[\w\d]+|( )/(?1:_:\L$0\E)/g}" ${2:class="${3:}"}>
+	<legend>$1</legend>
+
+	$0
+</fieldset>
+endsnippet
+
+##############
+#  Comments  #
+##############
+
+snippet < "HTML comment" !i
+<!-- ${1} -->$0
+endsnippet
+
+snippet ncs "New Code Comment marker START"
+<!-- ### NEW CODE START ########## -->
+endsnippet
+
+snippet nce "New Code Comment marker END"
+<!-- ### NEW CODE END ########## -->
+endsnippet
+
+#################################################
+#  Special HTML tags suited for eCRF Templates  #
+#################################################
+
+snippet tlabel "Label tag" !w
+<label id="label_ans${1}" for="ans$1"${2}>${3:${VISUAL}}${4}</label>$0
+endsnippet
+
+snippet tselect "Select Box" !w
+<select id="${1}" name="${2:$1}">
+	$0${VISUAL}
+</select>
+endsnippet
+
+snippet toption "Option" !w
+<option value="${1}" <?= $hh->selected('ans${2}', '$1'); ?>>${3:${VISUAL}}${4}</option>$0
+endsnippet
+
+snippet ttext "input text field" !w
+<input type="text" id="ans${1}" name="ans$1" value="<?= \$ans['ans$1']; ?>"${3}>$0
+endsnippet
+
+snippet tcheckbox "input checkbox field" !w
+<input type="checkbox" id="ans${1}_${2}" name="ans$1[]" value="${3}" <?= \$hh->checked('ans$1', '$3'); ?>${4}>$0
+endsnippet
+
+snippet tradio "input radio field" !w
+<input type="radio" id="ans${1}_${2}" name="ans$1" value="${3}" <?= \$hh->checked('ans$1', '$3'); ?>${4}>$0
+endsnippet
+
+# vim:ft=snippets:

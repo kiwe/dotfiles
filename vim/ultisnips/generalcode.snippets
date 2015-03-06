@@ -1,0 +1,104 @@
+################################################################################
+#                                   Comments                                   #
+################################################################################
+
+snippet prop "comment property"
+@property $0
+endsnippet
+
+snippet param "comment param"
+@param   $0
+endsnippet
+
+snippet return "comment return" !
+@return  $0
+endsnippet
+
+snippet codec "Code block" !
+<code>
+* ${1}
+* </code>$0
+endsnippet
+
+snippet eof "End of File comment" !b
+// End of File
+endsnippet
+
+################################################################################
+#                                 IF CONDITION                                 #
+################################################################################
+
+snippet ifs "if single"
+if (${1}) $0
+endsnippet
+
+snippet if "if"
+if (${1}) {
+    ${2}
+}$0
+endsnippet
+
+snippet else "else"
+else${1: if (${2})} {
+    ${3}
+}$0
+endsnippet
+
+################################################################################
+#                                    LOOPS                                     #
+################################################################################
+
+snippet for "for" !b
+for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	${4:// code...}
+}
+endsnippet
+
+snippet swi "switch" !a
+switch (${1}) {
+    ${2}
+
+    default:
+}
+endsnippet
+
+snippet case "case single line" !b
+case '${1}': ${2}; break;
+endsnippet
+
+snippet casem "case multi line" !b
+case '${1}':
+    ${2}
+    break;
+endsnippet
+
+snippet fn "function call" i
+${1}(${2})$0
+endsnippet
+
+snippet t "t"
+$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
+endsnippet
+
+snippet try "Try Catch"
+try {
+    ${1:// code...}
+
+} catch (Exception $e) {
+    ${2:// code...}
+}$0
+endsnippet
+
+snippet tne "Throw new exception"
+throw new Exception('${1}');
+endsnippet
+
+snippet retf "return false;" !b
+return false;
+endsnippet
+
+snippet rett "return true;" !b
+return true;
+endsnippet
+
+# vim:ft=snippets:

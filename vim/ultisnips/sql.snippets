@@ -1,0 +1,124 @@
+
+###########################################################################
+#                               SQL WRITING                               #
+###########################################################################
+
+snippet s "SELECT" !w
+SELECT $0
+endsnippet
+
+snippet f "FROM" !w
+FROM $0
+endsnippet
+
+snippet w "WHERE" !w
+WHERE $0
+endsnippet
+
+snippet o "ON" !w
+ON $0
+endsnippet
+
+snippet 8 "()" !w
+($0)
+endsnippet
+
+snippet lj "LEFT JOIN" !w
+LEFT JOIN $0
+endsnippet
+
+snippet e "Equal sign" !w
+= $0
+endsnippet
+
+snippet a "AND" !w
+AND $0
+endsnippet
+
+snippet as "AS" !w
+AS $0
+endsnippet
+
+snippet nn "IS NOT NULL" !w
+IS NOT NULL$0
+endsnippet
+
+snippet ob "ORDER BY" !w
+ORDER BY $0
+endsnippet
+
+###########################################################################
+#                              CREATE TABLES                              #
+###########################################################################
+
+snippet table "create table" !b
+CREATE TABLE "${1}" (
+    ${2}
+);${3}
+endsnippet
+
+snippet id "id attribute" !b
+"id"                serial                          PRIMARY KEY,
+$0
+endsnippet
+
+snippet attr "attribute" !b
+"${1:name}"`!p snip.rv = ' '*(20-2-len(t[1]))
+`${2:type}`!p snip.rv = ' ' * (32-len(t[2]))
+`${3:NOT NULL}${4},$0
+endsnippet
+
+snippet int "int attribute" !b
+"${1:name}"`!p snip.rv = ' '*(20-2-len(t[1]))
+`integer                         ${2:NOT NULL}${3},$0
+endsnippet
+
+snippet varchar "varchar attribute" !b
+"${1:name}"`!p snip.rv = ' '*(20-2-len(t[1]))
+`character varying(${2})`!p snip.rv = ' ' * (13-len(t[2]))
+`${3:NOT NULL}${4},$0
+endsnippet
+
+snippet text "text attribute" !b
+"${1:name}"`!p snip.rv = ' '*(20-2-len(t[1]))
+`text                            ${2:NOT NULL}${3},$0
+endsnippet
+
+snippet bool "boolean attribute" !b
+"${1:name}"`!p snip.rv = ' '*(20-2-len(t[1]))
+`boolean                         ${2:NOT NULL} DEFAULT(${3}),$0
+endsnippet
+
+snippet ts "timestamp attribute" !b
+"${1:name}"`!p snip.rv = ' '*(20-2-len(t[1]))
+`timestamp without time zone     ${2:NOT NULL}${3},$0
+endsnippet
+
+snippet date "date attribute" !b
+"${1:name}"`!p snip.rv = ' '*(20-2-len(t[1]))
+`date                            ${2:NOT NULL}${3},$0
+endsnippet
+
+snippet time "time attribute" !b
+"${1:name}"`!p snip.rv = ' '*(20-2-len(t[1]))
+`time (0) without time zone      ${2:NOT NULL}${3},$0
+endsnippet
+
+snippet fkey "Foreign Key" !b
+FOREIGN KEY ("${1}")`!p
+snip.rv = ' '*(38-2-len(t[1]))
+`REFERENCES "${2}"`!p
+snip.rv = ' '*(20-2-len(t[2]))
+`("${3:id}")${4},$0
+endsnippet
+
+snippet uniq "Unique constraint" !b
+UNIQUE      ("${1}"${2:, "${3}"${4}}),$0
+endsnippet
+
+snippet const "Constraint" !b
+CONSTRAINT  "${1:name}"`!p
+snip.rv = ' '*(40-2-len(t[1]))
+`CHECK (${2}),$0
+endsnippet
+

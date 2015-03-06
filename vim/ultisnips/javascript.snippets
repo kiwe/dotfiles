@@ -1,0 +1,79 @@
+extends generalcode
+
+snippet :, "Object Value JS"
+${1:value_name}:${0:value},
+endsnippet
+
+snippet : "Object key key: 'value'"
+${1:key}: ${2:"${3:value}"}${4:, }
+endsnippet
+
+################################################################################
+#                             Function definition                              #
+################################################################################
+
+snippet meth "method" !w
+function ${1}(${2}) {
+    ${3}
+}$0
+endsnippet
+
+snippet metha "Anonymous method" !w
+function (${1}) {
+    ${2}
+}$0
+endsnippet
+
+snippet '':f "object method string"
+'${1:${2:#thing}:${3:click}}': function(element){
+	$0
+}${10:,}
+endsnippet
+
+snippet :f "Object Method"
+${1:method_name}: function(${3:attribute}){
+	$0
+}${10:,}
+endsnippet
+
+################################################################################
+#                             JavaScript functions                             #
+################################################################################
+
+snippet timeout "setTimeout function" !
+setTimeout(function() {$0}${2:}, ${1:10});
+endsnippet
+
+snippet cl "Console log" !b
+console.log(${1:'${2}'}${3});$0
+endsnippet
+
+snippet alert "alertbox" !w
+alert(${1:'${2}'}${3});$0
+endsnippet
+
+################################################################################
+#                               jQuery Snippets                                #
+################################################################################
+
+snippet $ "jQuery" !w
+$(${1:'${2}'})$0
+endsnippet
+
+snippet $# "jQuery with ID" !w
+$('#${1}'${2})$0
+endsnippet
+
+snippet docr "Document ready" !b
+$(document).ready(function () {
+    $0
+});
+endsnippet
+
+snippet .click "click trigger" !i
+.click(function (${1}) {
+    ${2}
+});$0
+endsnippet
+
+# vim:ft=snippets:

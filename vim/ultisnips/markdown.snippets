@@ -1,0 +1,101 @@
+###########################################################################
+#                          SNIPPETS for MARKDOWN                          #
+###########################################################################
+
+###########################
+# Sections and Paragraphs #
+###########################
+snippet s "Section" b
+# ${1:Section Name} #
+$0
+endsnippet
+
+snippet ss "Sub Section" b
+## ${1:Section Name} ##
+$0
+endsnippet
+
+snippet sss "SubSub Section" b
+### ${1:Section Name} ###
+$0
+endsnippet
+
+snippet par "Paragraph" b
+#### ${1:Paragraph Name} ####
+$0
+endsnippet
+
+snippet spar "Paragraph" b
+##### ${1:Paragraph Name} #####
+$0
+endsnippet
+
+###############
+#  formating  #
+###############
+
+snippet * "bold" !w
+**${1:${VISUAL}}**$0
+endsnippet
+
+snippet _ "italic" !w
+_${1:${VISUAL}}_$0
+endsnippet
+
+################
+# Common stuff #
+################
+
+snippet link "Link to something"
+[${1:${VISUAL:Text}}](${3:http://${2:www.url.com}})$0
+endsnippet
+
+snippet linkid "Link with ID reference" !
+[${1:${VISUAL:Text}}][${2:id}]
+endsnippet
+
+snippet img "Link to something"
+![${1:pic alt}](${2:path}${3/.+/ "/}${3:opt title}${3/.+/"/})$0
+endsnippet
+
+snippet id "Link ID"
+[${1:id}]: ${3:http://www.${2:example.com}/${5}} ${7:"${6:Optional Title}"}$0
+endsnippet
+
+################
+#  HTML stuff  #
+################
+
+snippet strong "strong tag" !w
+<strong>${1:${VISUAL}}</strong>$0
+endsnippet
+
+snippet em "Italic text" !w
+<em>${1:${VISUAL}}</em>$0
+endsnippet
+
+snippet lt "Less Than sign HTML entity" !w
+&lt;
+endsnippet
+
+snippet gt "Grater Than sign HTML entity" !w
+&gt;
+endsnippet
+
+snippet dl "Definition List" !b
+<dl>
+    ${1}
+</dl>$0
+endsnippet
+
+snippet dt "Definition Title" !b
+<dt>${1}</dt>$0
+endsnippet
+
+snippet dd "Definition Description" !b
+<dd>
+    ${1}
+</dd>$0
+endsnippet
+
+# vim:ft=snippets:
