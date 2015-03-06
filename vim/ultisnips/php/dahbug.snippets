@@ -1,0 +1,26 @@
+#
+# dahbug snippets (https://github.com/kiwe/dahbug)
+#
+
+snippet dahw "dahbug::write($var, $encoding)" w
+dahbug::write(${VISUAL}${1})
+endsnippet
+
+
+snippet dahd "dahbug::dump($var, $label, $maxDepth)" w
+dahbug::dump(${VISUAL}${1})
+endsnippet
+
+snippet dahm "dahbug::methods($object, $method)" w
+dahbug::methods(${VISUAL}${1})
+endsnippet
+
+snippet dahn "dahbug::nl()" w
+dahbug::nl()
+endsnippet
+
+snippet dahh "dahbug::hex($bin)" w
+dahbug::hex(${VISUAL}${1})
+endsnippet
+
+# :vim:ft=snippets:
