@@ -163,7 +163,7 @@ nnoremap <Leader>v :tabe $MYVIMRC<CR>
 
 " Open UltiSnips quickly
 nnoremap <Leader>s :UltiSnipsEdit<CR>
-nnoremap <Leader>us :tabe<CR>:cd $HOME/.vim/snippets<CR>:CtrlP<CR>
+nnoremap <Leader>us :tabe<CR>:cd $HOME/.vim/ultisnips<CR>:CtrlP<CR>
 
 " CtrlP
 nnoremap <Leader>bu :CtrlPBuffer<CR>
