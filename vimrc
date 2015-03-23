@@ -103,6 +103,9 @@ endif
 " Filetype plugins should autoload
 filetype plugin on
 
+nnoremap <Leader>tt :NERDTreeToggle<CR>
+nnoremap <Leader>tm :NERDTreeMirror<CR>
+
 " Make it possible to add empty lines without entering insert mode
 nmap <Leader>o o<Esc>
 nmap <Leader>O O<Esc>
