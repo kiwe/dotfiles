@@ -1,1 +1,11 @@
 extends html
+
+snippet mtag "Multi line tag" w
+<${1}>
+	${VISUAL}${2}
+</$1>${0}
+endsnippet
+
+snippet tag "Single line tag" w
+<${1}>${VISUAL}</$1>${0}
+endsnippet

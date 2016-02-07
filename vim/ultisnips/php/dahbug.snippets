@@ -2,10 +2,13 @@
 # dahbug snippets (https://github.com/kiwe/dahbug)
 #
 
+snippet dahi "Include dahbug" w
+include_once '../../dahbug/dahbug.php';
+endsnippet
+
 snippet dahw "dahbug::write($var, $encoding)" w
 dahbug::write(${VISUAL}${1})
 endsnippet
-
 
 snippet dahd "dahbug::dump($var, $label, $maxDepth)" w
 dahbug::dump(${VISUAL}${1})

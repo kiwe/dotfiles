@@ -6,7 +6,7 @@
 # Doctypes #
 ############
 
-snippet html5 "HTML5 DocType" !b
+snippet doctype5 "DocType HTML5" !b
 <!DOCTYPE html>
 endsnippet
 
@@ -19,79 +19,16 @@ endsnippet
 snippet doctype "DocType XHTML 1.0 Transitional" b
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 endsnippet
 
 snippet doctype "DocType XHTML 1.1" b
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
 endsnippet
 
 snippet doctype "HTML - 4.0 Transitional (doctype)" b
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 	"http://www.w3.org/TR/html4/loose.dtd">
-
-endsnippet
-
-
-#############
-# Shortcuts #
-#############
-snippet down "Down (down)"
-&#x2193;
-endsnippet
-
-snippet enter "Enter (enter)"
-&#x2305;
-endsnippet
-
-snippet escape "Escape (escape)"
-&#x238B;
-endsnippet
-
-snippet shift "Shift (shift)"
-&#x21E7;
-endsnippet
-
-snippet tab "Tab (tab)"
-&#x21E5;
-endsnippet
-
-snippet up "Up (up)"
-&#x2191;
-endsnippet
-
-# snippet return "Return (return)"
-# &#x21A9;
-# endsnippet
-
-snippet right "Right (right)"
-&#x2192;
-endsnippet
-
-snippet left "Left (left)"
-&#x2190;
-endsnippet
-
-#######################
-# Conditional inserts #
-#######################
-
-snippet ! "IE Conditional Comment: Internet Explorer 6 only"
-<!--[if IE 6]>${1:IE Conditional Comment: Internet Explorer 6 only   }<![endif]-->$0
-endsnippet
-
-snippet ! "IE Conditional Comment: Internet Explorer 7+"
-<!--[if gte IE 7]>${1:IE Conditional Comment: Internet Explorer 7 and above }<![endif]-->$0
-endsnippet
-
-snippet ! "IE Conditional Comment: Internet Explorer"
-<!--[if IE]>${1:       IE Conditional Comment: Internet Explorer          }<![endif]-->$0
-endsnippet
-
-snippet ! "IE Conditional Comment: NOT Internet Explorer"
-<!--[if !IE]><!-->${1:  IE Conditional Comment: NOT Internet Explorer      }<!-- <![endif]-->$0
 endsnippet
 
 #########################
@@ -131,6 +68,14 @@ endsnippet
 #############
 
 snippet html "HTML tag" !b
+<!DOCTYPE html>
+<html>
+    $0
+</html>
+endsnippet
+
+snippet html5 "HTML tag" !b
+<!DOCTYPE html>
 <html>
     $0
 </html>
@@ -145,21 +90,13 @@ snippet opt "Option"
 endsnippet
 
 snippet select "Select Box"
-<select id="${1}" name="${2}">
+<select${1}">
 	$0
 </select>
 endsnippet
 
-snippet textarea "  <textarea>"
-<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">$0</textarea>
-endsnippet
-
-snippet mailto "<a mailto: >"
-<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
-endsnippet
-
-snippet base "<base>"
-<base href="$1"${2: target="$3"}>
+snippet textarea "<textarea>"
+<textarea id="${1}" name="${2}">$0</textarea>
 endsnippet
 
 snippet body "<body>"
@@ -238,13 +175,13 @@ endsnippet
 
 snippet head "<head>"
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
 	<title>${1}</title>${2}
 </head>$0
 endsnippet
 
 snippet link "<link>"
-<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" title="${4:no title}" charset="${5:utf-8}">
+<link rel="${1:stylesheet}" href="${2:/css/master.css}">
 endsnippet
 
 snippet meta "<meta>"
@@ -252,17 +189,17 @@ snippet meta "<meta>"
 endsnippet
 
 snippet scriptsrc "<script src...>"
-<script src="$1" type="text/javascript" charset="${3:utf-8}"></script>
+<script src="$1"></script>
 endsnippet
 
 snippet script "<script>"
-<script type="text/javascript" charset="utf-8">
+<script>
 	$0
 </script>
 endsnippet
 
 snippet style "<style>"
-<style type="text/css" media="screen">
+<style>
 	$0
 </style>
 endsnippet
@@ -382,14 +319,6 @@ endsnippet
 
 snippet < "HTML comment" !i
 <!-- ${1} -->$0
-endsnippet
-
-snippet ncs "New Code Comment marker START"
-<!-- ### NEW CODE START ########## -->
-endsnippet
-
-snippet nce "New Code Comment marker END"
-<!-- ### NEW CODE END ########## -->
 endsnippet
 
 #################################################
