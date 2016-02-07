@@ -202,7 +202,7 @@ augroup mygroup
     au BufWritePost $MYVIMRC source $MYVIMRC
 
     " Automagicaly trim whitespaces when saving a file
-    " au BufWritePre * :%s/\s\+$//e
+    au BufWritePre * :%s/\s\+$//e
 
     " Detect file change in shell
     "au FileChangedShell * echo "Warning: File changed on disk"
