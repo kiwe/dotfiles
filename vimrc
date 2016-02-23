@@ -51,13 +51,19 @@ let g:omni_sql_no_default_maps = 1
 let g:instant_markdown_slow = 1
 let g:manpageview_pgm = "pman"
 let g:manpageview_pgm_php = "pman"
+let g:taboo_renamed_tab_format = " %l%m "
 
 " NERD Commenter
 let NERDSpaceDelims=1
 let NERDDefaultNesting=1
 
-set encoding=utf-8
 set fileencoding=utf-8
+set fileformat=unix
+
+" Show list characters
+set list
+set listchars=tab:>-,trail:-,nbsp:+
+
 set splitright      " Open spit windows on right side
 set ruler           " Ruler on status bar
 set number          " Line numbers to the left
@@ -136,11 +142,11 @@ vnoremap <Leader>' :s/"/'/g<CR>
 nnoremap <Leader>' :s/"/'/g<CR>
 
 " Align by = signs
-vnoremap <Leader>= :Tab /\(=>\\|\(!\)\@<!=\)<CR>
+vnoremap <Leader>= :Tabularize /\(=>\\|\(!\)\@<!=\)<CR>
 " Align by ,
-vnoremap <Leader>, :Tab /,\zs/l0r1<CR>
+vnoremap <Leader>, :Tabularize /,\zs/l0r1<CR>
 " Align by :
-vnoremap <Leader>: :Tab /^[^:]*\zs:\zs/l0r1<CR>
+vnoremap <Leader>: :Tabularize /^[^:]*\zs:\zs/l0r1<CR>
 
 " Quick access to different tabs
 nnoremap <Leader>1 :tabnext 1<CR>
