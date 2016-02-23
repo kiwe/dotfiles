@@ -7,4 +7,4 @@
 
 # Environment variables
 export PATH
-export LESS="-FRS"
+export LESS="-RS"

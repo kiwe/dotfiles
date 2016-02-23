@@ -4,6 +4,10 @@
 # Source from dotfiles
 source ~/.dotfiles/bash/aliases
 
+[[ -f ~/.profile ]] && source ~/.profile
+
 # Source local aliases
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
+# Reset prompt
+PROMPT_COMMAND=""
