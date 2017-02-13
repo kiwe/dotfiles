@@ -1,28 +1,15 @@
 extends html, css, javascript, generalcode
 
-snippet newpage "PHP base template" !b
-<?php
-
-include_once '../${1:../}lib/kops-lib.php';${2}
-
-class ${3:ClassName} {
-    ${4:// Properties}
-
-    /**
-     * Constructor
-     * ${5}
-     * return void
-     */
-    public function __construct(${6}) {
-        ${7}
-    }${8}
-}${9}
-
-// End of File
-endsnippet
-
 snippet def "def"
 define('${1}'${2});${3}
+endsnippet
+
+snippet _l "__LINE__" w
+__LINE__
+endsnippet
+
+snippet _m "__METHOD__" w
+__METHOD__
 endsnippet
 
 snippet doch "documentation file header"
@@ -42,7 +29,8 @@ snippet classc "class with comment" !b
 /**
  * ${1}
  */
-class ${2:ClassName} {
+class ${2:ClassName}
+{
     ${3}
 }
 endsnippet
@@ -60,7 +48,8 @@ snippet funcc "function with comment" !b
  *
  * @return  ${2:void}
  */
-${3:public }function ${4:__construct}(${5}) {
+${3:public }function ${4:__construct}(${5})
+{
     ${6}
 }
 endsnippet
@@ -134,7 +123,7 @@ PHI_ENVIRONMENT
 endsnippet
 
 snippet pst "PHP Short Tag" w
-<?= ${1}; ?>$0
+<?= ${1} ?>$0
 endsnippet
 
 snippet pslt "PHP Single Line Tag" w
