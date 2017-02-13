@@ -7,23 +7,23 @@ include_once '../../dahbug/dahbug.php';
 endsnippet
 
 snippet dahw "dahbug::write($var, $encoding)" w
-dahbug::write(${VISUAL}${1})
+\dahbug::write(${VISUAL}${1});${0}
 endsnippet
 
 snippet dahd "dahbug::dump($var, $label, $maxDepth)" w
-dahbug::dump(${VISUAL}${1})
+\dahbug::dump(${VISUAL}${1});${0}
 endsnippet
 
 snippet dahm "dahbug::methods($object, $method)" w
-dahbug::methods(${VISUAL}${1})
+\dahbug::methods(${VISUAL}${1});${0}
 endsnippet
 
 snippet dahn "dahbug::nl()" w
-dahbug::nl()
+\dahbug::nl();${0}
 endsnippet
 
 snippet dahh "dahbug::hex($bin)" w
-dahbug::hex(${VISUAL}${1})
+\dahbug::hex(${VISUAL}${1});${0}
 endsnippet
 
 # :vim:ft=snippets:
