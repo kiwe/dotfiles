@@ -62,15 +62,15 @@ set fileformat=unix
 
 " Show list characters
 set list
-set listchars=tab:>-,trail:-,nbsp:+
+set listchars=tab:.\ ,trail:-,nbsp:+
 
 set splitright      " Open spit windows on right side
 set ruler           " Ruler on status bar
 set number          " Line numbers to the left
 set ignorecase      " Ignore case when searching
 set smartcase       " Good combo with ignorecase
-set expandtab       " Tab thingys
-set tabstop=4
+set expandtab       " Convert TAB character to spaces
+set tabstop=4       " Width of TAB character
 set shiftwidth=4
 set softtabstop=4
 set autoindent      " Autoindent is usually nice
@@ -83,16 +83,16 @@ set showcmd         " Let you see commands you're typing
 set nobackup        " No backup
 set noswapfile      " No swapfiles
 set wildmode=list:longest,full
-set scrolloff=10
-set pastetoggle=<F9>
+" set scrolloff=10
+" set pastetoggle=<F9>
 set mouse=a
 set autoread
 " Folding
-" set foldmethod=indent
-" set foldminlines=2
-" set foldnestmax=20
-" set foldlevelstart=99
-" set foldlevel=0
+set foldmethod=indent
+set foldminlines=2
+set foldnestmax=20
+set foldlevelstart=99
+set foldlevel=0
 
 " vim-airline (Fancy thingy at bottom stuff)
 let g:airline_powerline_fonts = 1 " For fancy powerline symbols
@@ -149,6 +149,8 @@ vnoremap <Leader>, :Tabularize /,\zs/l0r1<CR>
 vnoremap <Leader>: :Tabularize /^[^:]*\zs:\zs/l0r1<CR>
 
 " Quick access to different tabs
+nnoremap <Leader>n :tabnext<CR>
+nnoremap <Leader>p :tabprev<CR>
 nnoremap <Leader>1 :tabnext 1<CR>
 nnoremap <Leader>2 :tabnext 2<CR>
 nnoremap <Leader>3 :tabnext 3<CR>
@@ -178,8 +180,9 @@ nnoremap <Leader>us :tabe<CR>:cd $HOME/.vim/ultisnips<CR>:CtrlP<CR>
 nnoremap <Leader>bu :CtrlPBuffer<CR>
 
 " Remapping for save
-inoremap <F1> <C-\><C-O>:w<CR>
-noremap  <F1> :w<CR>
+" inoremap <F1> <C-\><C-O>:w<CR>
+" noremap  <F1> :w<CR>
+noremap <Leader><Leader> :w<CR>
 
 " Tagbar mapping
 nmap <F2> :TagbarOpen fj<CR>
@@ -217,7 +220,7 @@ augroup mygroup
 augroup END
 
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|adodb.*\|fonts\|jpgraph$\|libchart$\|mpdf.*\|pChart\|pear$\|xpm$\|pics|demo|images|localization$',
+    \ 'dir':  '\.git$\|adodb.*\|fonts\|jpgraph$\|libchart$\|mpdf.*\|pChart\|pear$\|xpm$\|node_modules$',
     \ 'file': '\.exe$\|\.so$\|\.dll|\.png|\.jpg|\.jpeg|\.gif$',
 \ }
 
